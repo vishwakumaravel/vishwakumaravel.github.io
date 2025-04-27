@@ -1,120 +1,183 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vishwa Kumaravel's Personal Webpage</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #e0f7fa;
-            color: #333;
-        }
-        .container {
-            width: 80%;
-            margin: 0 auto;
-        }
-        header {
-            background-color: #0288d1;
-            color: white;
-            padding: 1em 0;
-            text-align: center;
-        }
-        section {
-            margin: 2em 0;
-        }
-        .content {
-            background-color: white;
-            padding: 2em;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        h2 {
-            color: #0288d1;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        ul li {
-            margin: 0.5em 0;
-        }
-        .contact-info {
-            background-color: #333;
-            color: white;
-            padding: 1em;
-            text-align: center;
-        }
-        a {
-            color: #0288d1;
-            text-decoration: none;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vishwa Kumaravel - Software Engineering Portfolio</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { fontFamily: { sans: ['Poppins', 'sans-serif'] } } }
+    };
+  </script>
+  <!-- Devicon for skill icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pQfmfYGeq1k0XqD0O5Y+MsXQyE8erQHvYWwTW436M4V1jmuhOOPuTl3aP02I+g/ka46rX1t8b77i6P5d6q6U2w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- AOS Animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="icon" href="favicon.ico">
 </head>
-<body>
-    <header>
-        <h1>Vishwa Kumaravel</h1>
-        <p>Motivated engineering college student with strong work ethic and creative ability.</p>
-    </header>
-
-    <div class="container">
-        <section id="about">
-            <div class="content">
-                <h2>About Me</h2>
-                <p>I'm a freshman pursuing Computer Science at Texas A&M University. I have hands-on experience with Python Programming, including file parsing, solving mathematical computations with Sympy, and developing graphs using numpy and matplotlib. I'm familiar with sorting lists and arrays, using lists, string slicing, and dictionaries in various projects.</p>
-            </div>
-        </section>
-
-        <section id="education">
-            <div class="content">
-                <h2>Education</h2>
-                <ul>
-                    <li><strong>Texas A&M University, College Station, TX [Aug 2023 - Present]</strong>
-                        <ul>
-                            <li>Freshman pursuing Computer Science</li>
-                            <li>Hands-on experience with Python Programming. Developed file parsing code, solved mathematical computations with Sympy. Developed graphs using numpy and matplotlib. Sorted lists and arrays. Used list, string slicing and dictionaries on various projects.</li>
-                        </ul>
-                    </li>
-                    <br>
-                    <li><strong>Liberal Arts and Science Academy, Austin, TX [2019-2023]</strong>
-                        <ul>
-                            <li>Weighted GPA: 4.2 / 5.0</li>
-                            <li>Coursework: AP Computer Science, Adv Computer Science 2, Digital Electronics, Web and Mobile App Development, AP Physics 1, AP Physics 2, Robotics, Calculus BC</li>
-                            <li>Awards: AP Scholar Award</li>
-                            <li>Honors: Member of the National Honors Society</li>
-                            <li>Clubs: LASA Robotics Team</li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="projects">
-            <div class="content">
-                <h2>Projects</h2>
-                <p>Check out my GitHub for more details on my projects: <a href="https://github.com/vishwakumaravel" target="_blank">https://github.com/vishwakumaravel</a></p>
-            </div>
-        </section>
-
-        <section id="skills">
-            <div class="content">
-                <h2>Skills</h2>
-                <ul>
-                    <li>Object Oriented Programming in C++, JAVA</li>
-                    <li>Python, HTML, CSS, Javascript, Bootstrap 5, SQLite, and Flask-based web development</li>
-                    <li>Experience creating Circuits with Arduinos + breadboards, NGSpice Electrical Circuit Simulator, Logisim, Tinkercad</li>
-                    <li>Built a microprocessor in logisim</li>
-                    <li>Experience with Solidworks CAD</li>
-                    <li>Fluent understanding of Tamil and Basic speaking level in Spanish</li>
-                </ul>
-            </div>
-        </section>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans leading-relaxed">
+  <!-- Navbar -->
+  <nav class="fixed w-full bg-white/70 dark:bg-gray-800/60 backdrop-blur-md z-50">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+      <a href="#hero" class="text-2xl font-extrabold hover:text-teal-500 dark:hover:text-teal-400 transition">Vishwa Kumaravel</a>
+      <div class="flex items-center space-x-6 text-lg">
+        <a href="#about" class="hover:text-teal-500 dark:hover:text-teal-400 transition">About</a>
+        <a href="#skills" class="hover:text-teal-500 dark:hover:text-teal-400 transition">Skills</a>
+        <a href="#projects" class="hover:text-teal-500 dark:hover:text-teal-400 transition">Projects</a>
+        <a href="#experience" class="hover:text-teal-500 dark:hover:text-teal-400 transition">Experience</a>
+        <a href="#contact" class="hover:text-teal-500 dark:hover:text-teal-400 transition">Contact</a>
+        <!-- Dark Mode Toggle -->
+        <button id="theme-toggle" aria-label="Toggle Theme" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+          <i id="theme-icon" class="fas fa-moon"></i>
+        </button>
+      </div>
     </div>
+  </nav>
 
-    <footer class="contact-info">
-        <p>Contact Me: <a href="mailto:vishwakumaravel@gmail.com">vishwakumaravel@gmail.com</a> | Phone: 737-300-7252 | Location: Austin, Texas</p>
-    </footer>
+  <!-- Hero Section -->
+  <header id="hero" class="h-screen flex items-center justify-center bg-[url('hero-bg.jpg')] bg-cover bg-center" data-aos="fade-in">
+    <div class="text-center bg-white/80 dark:bg-gray-800/80 p-10 rounded-3xl shadow-2xl">
+      <h1 class="text-5xl md:text-6xl font-extrabold mb-4">Hi, I'm Vishwa Kumaravel</h1>
+      <p class="text-xl md:text-2xl mb-6 max-w-2xl mx-auto">Aspiring Software Engineer &mdash; C++, Python, ML, and Embedded Systems Enthusiast</p>
+      <a href="#projects" class="inline-block px-8 py-4 bg-teal-500 text-white rounded-full font-semibold tracking-wide hover:bg-teal-600 transition">Explore My Work</a>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-6 py-16 space-y-32">
+    <!-- About Section -->
+    <section id="about" class="pt-24" data-aos="fade-up">
+      <h2 class="text-4xl font-bold mb-6 border-b-4 border-teal-500 inline-block">About Me</h2>
+      <div class="flex flex-col md:flex-row items-center md:space-x-12">
+        <img src="profile.jpg" alt="Profile" class="w-48 h-48 rounded-3xl mb-6 md:mb-0 object-cover shadow-2xl">
+        <p class="text-lg max-w-prose">I’m a Computer Science student at UT Dallas passionate about crafting efficient, scalable software solutions. With experience in C++, Python, machine learning, and embedded firmware, I thrive on solving complex challenges and collaborating on innovative projects. Outside coding, I contribute to open-source and explore emerging technologies to stay ahead in the fast-paced tech world.</p>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" data-aos="fade-up" data-aos-delay="100">
+      <h2 class="text-4xl font-bold mb-6 border-b-4 border-teal-500 inline-block">Skills</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
+        <div class="flex flex-col items-center p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg transform hover:-translate-y-1 hover:scale-105 transition" data-aos="zoom-in">
+          <i class="devicon-cplusplus-plain text-4xl mb-4"></i>
+          <p class="font-medium">C++</p>
+        </div>
+        <div class="flex flex-col items-center p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg transform hover:-translate-y-1 hover:scale-105 transition" data-aos="zoom-in" data-aos-delay="50">
+          <i class="devicon-python-plain text-4xl mb-4"></i>
+          <p class="font-medium">Python</p>
+        </div>
+        <div class="flex flex-col items-center p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg transform hover:-translate-y-1 hover:scale-105 transition" data-aos="zoom-in" data-aos-delay="100">
+          <i class="fab fa-js-square text-4xl mb-4"></i>
+          <p class="font-medium">JavaScript</p>
+        </div>
+        <div class="flex flex-col items-center p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg transform hover:-translate-y-1 hover:scale-105 transition" data-aos="zoom-in" data-aos-delay="150">
+          <i class="fab fa-node-js text-4xl mb-4"></i>
+          <p class="font-medium">Node.js</p>
+        </div>
+        <div class="flex flex-col items-center p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg transform hover:-translate-y-1 hover:scale-105 transition" data-aos="zoom-in" data-aos-delay="200">
+          <i class="fab fa-react text-4xl mb-4"></i>
+          <p class="font-medium">React</p>
+        </div>
+        <div class="flex flex-col items-center p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg transform hover:-translate-y-1 hover:scale-105 transition" data-aos="zoom-in" data-aos-delay="250">
+          <i class="fab fa-github text-4xl mb-4"></i>
+          <p class="font-medium">Git &amp; GitHub</p>
+        </div>
+        <div class="flex flex-col items-center p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg transform hover:-translate-y-1 hover:scale-105 transition" data-aos="zoom-in" data-aos-delay="300">
+          <i class="devicon-tailwindcss-plain text-4xl mb-4"></i>
+          <p class="font-medium">Tailwind CSS</p>
+        </div>
+        <div class="flex flex-col items-center p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg transform hover:-translate-y-1 hover:scale-105 transition" data-aos="zoom-in" data-aos-delay="350">
+          <i class="devicon-docker-plain text-4xl mb-4"></i>
+          <p class="font-medium">Docker</p>
+        </div>
+        <div class="flex flex-col items-center p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg transform hover:-translate-y-1 hover:scale-105 transition" data-aos="zoom-in" data-aos-delay="400">
+          <i class="devicon-linux-plain text-4xl mb-4"></i>
+          <p class="font-medium">Linux</p>
+        </div>
+        <div class="flex flex-col items-center p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg transform hover:-translate-y-1 hover:scale-105 transition" data-aos="zoom-in" data-aos-delay="450">
+          <i class="devicon-postgresql-plain text-4xl mb-4"></i>
+          <p class="font-medium">PostgreSQL</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" data-aos="fade-up" data-aos-delay="150">
+      <h2 class="text-4xl font-bold mb-6 border-b-4 border-teal-500 inline-block">Projects</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg transform hover:-translate-y-1 hover:scale-102 transition" data-aos="fade-up" data-aos-delay="100">
+          <img src="project1-screenshot.png" alt="AirWear Cooling Jacket" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold mb-2">AirWear Cooling Jacket</h3>
+            <p class="mb-4">Prototyped a smart cooling jacket using electrocaloric materials and flexible batteries; implemented firmware in C, reducing power consumption by 25%.</p>
+            <a href="https://github.com/vishwakumaravel/airwear" target="_blank" class="inline-flex items-center font-semibold hover:text-teal-500">
+              <i class="fab fa-github mr-2"></i>View Code
+            </a>
+          </div>
+        </div>
+        <!-- Repeat project cards for each project with data-aos attributes and real screenshots -->
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" data-aos="fade-up" data-aos-delay="200">
+      <h2 class="text-4xl font-bold mb-6 border-b-4 border-teal-500 inline-block">Experience</h2>
+      <ul class="space-y-10">
+        <li class="flex flex-col md:flex-row md:space-x-8" data-aos="fade-right">
+          <div class="flex-shrink-0 mb-4 md:mb-0">
+            <img src="logos/tesla.svg" alt="Tesla" class="w-20 h-20 bg-white dark:bg-gray-800 p-3 rounded-xl shadow-md">
+          </div>
+          <div>
+            <h3 class="text-2xl font-semibold">Firmware Engineering Intern, Tesla</h3>
+            <p class="text-gray-600 dark:text-gray-400">June 2025 &mdash; August 2025</p>
+            <ul class="list-disc list-inside mt-3 space-y-2">
+              <li>Developed embedded firmware modules in C, reducing memory usage by 30%.</li>
+              <li>Integrated UART and JTAG debugging interfaces for rapid prototyping.</li>
+              <li>Collaborated with cross-functional teams to optimize sensor data pipelines.</li>
+            </ul>
+          </div>
+        </li>
+        <!-- Add more experience entries with animations -->
+      </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" data-aos="fade-up" data-aos-delay="250">
+      <h2 class="text-4xl font-bold mb-6 border-b-4 border-teal-500 inline-block">Contact</h2>
+      <p class="text-lg mb-6 max-w-prose">I'm always excited to connect. Feel free to reach out via email or LinkedIn, and let's build something amazing together!</p>
+      <div class="flex flex-col sm:flex-row gap-6">
+        <a href="mailto:vishwakumaravel@example.com" class="flex items-center space-x-3 bg-teal-500 text-white px-6 py-3 rounded-full font-medium hover:bg-teal-600 transition" data-aos="zoom-in">
+          <i class="fas fa-envelope"></i><span>Email Me</span>
+        </a>
+        <a href="https://linkedin.com/in/vishwakumaravel" target="_blank" class="flex items-center space-x-3 bg-gray-700 text-white px-6 py-3 rounded-full font-medium hover:bg-gray-600 transition" data-aos="zoom-in" data-aos-delay="50">
+          <i class="fab fa-linkedin"></i><span>LinkedIn</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 dark:bg-gray-800 py-6 text-center text-gray-600 dark:text-gray-400">
+    <p>&copy; 2025 Vishwa Kumaravel. Built with ❤️ & Tailwind CSS.</p>
+  </footer>
+
+  <!-- AOS & Theme Toggle Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+    const toggle = document.getElementById('theme-toggle');
+    const icon = document.getElementById('theme-icon');
+    toggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      if (document.documentElement.classList.contains('dark')) icon.classList.replace('fa-moon', 'fa-sun');
+      else icon.classList.replace('fa-sun', 'fa-moon');
+    });
+  </script>
 </body>
 </html>
